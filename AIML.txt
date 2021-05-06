@@ -1,0 +1,171 @@
+-------------------------------------------------------------------------------------------------------------------
+                                                         ML
+-------------------------------------------------------------------------------------------------------------------
+1.Converting a Domain problem to ML problem
+2.Data collection
+3.Training
+4.Deployment
+-------------
+1.Converting a Domain problem to ML problem:
+we need to analyze and take the necessary i/p like what they are expecting the o/p and other data from clients.
+-------------
+2.Data Collection and processing:
+Data Collection:
+  We can collect the data from different ways like buying from 3rd parties and collection of logs, useractions.
+Data preprocessing:
+  (1)Data labeling:
+  We can do or need to give to the companies which they can map
+  
+  (2)correction of data:
+  like age mistakes and eliminating the duplicating values.
+
+  (3)EDA and feature engg:
+  like we can see the graphical representation and need to check like every thing is good
+--------------
+3.Training:
+The preprocessed data can be classified into three parts :1.Training
+                                                          2.Validation
+                                                          3.Testing
+By stratified shuffling - (stratified shuffle means splitting the data by individual classes) it and need to take the every senario into consideration and need to split the data.
+
+(1)Train the model:
+The training data needs to be given to the model and need to train the model based on data.
+
+(2)Tune the hyperparameter for better o/p:
+We need to give the validation data and do the hyperparameter tuning in the middle for better performance of model.
+
+(3)Evaluation:
+After the training it will goes to evaluation by giving the testing data.
+
+(4)Performance metrics:
+we will get a plot for which k value how it is behaving.
+---------------
+4.Deployment:
+after all the above thing we can deploy our model to real world and we will face some issues like some failure 
+cases in that case we need to tune the hyperparameters and in some cases we need to change the model also.
+
+------------------------------------------------------------------------------------------------------------------------
+                                                    Types of ML
+------------------------------------------------------------------------------------------------------------------------
+
+1.Supervised learning - digit recognisation(google lens) 
+2.Unsupervised learning - google news
+3.Semi-supervised learning - Spam checking
+4.Reinforcement Learning - chess
+----------------------
+1.Supervised learning:
+Structured data
+Example - rows,feature - Columns and target - column but the o/p what we want to be present in it.
+Classification(Discrete) - Digit recognization
+Regression(continuous) - Rent and price of house
+
+----------------------
+2.Unsupervised learning:
+Un-structured data
+Cluster - google news
+Assosiation - recommendations in netflix and amazon
+
+----------------------
+3.Semi supervised learning:
+combination of both labelled data and unlabelled data
+Spam recognization - like we need to label some particular data i.e. definitely spam and based on that 
+we will take the unlabelled data and guess based on past and make it as labelled data. 
+
+----------------------
+4.Reinforcement learning:
+Playing chess
+Agent and Enviroment
+Rewards ,actions and observation
+Giving positive and negative points and make the system learn based on last results.
+
+------------------------------------------------------------------------------------------------------------------
+                                                     k-nn(nearest-neighbours)
+------------------------------------------------------------------------------------------------------------------
+Digit recognization:
+
+Data collected from MNIST(all are 28x28 size) which is labelled and in a useful way.
+All images are converted to gray scale (black and white in which each pixel has a value of 0-255)
+Computer vision like how it can see in a matrix
+
+Euclidean distance:
+a1,b1 and a2,b2 then (a1-a2)^2+(b1-b2)^2 is called the eucledian distance
+
+k-nn will do is in 3 steps:Figure the distance
+                           Sort the distance
+                           Take the count of highest priority one(Majority).
+
+Same like we will do for images which are in the form of matrix.
+
+If the majority is tie then we need to break it in two ways:Weight i.e. 1/euclidean distance of each indiviual
+                                                            and we can take the highest one.
+                                                            Voting like head and tails or random pick.
+
+if we take k as "1" the we will be in trouble like for every cahnge in value the o/p change is huge.
+So take the random and tune it.
+
+Confusion matrix:
+
+                 Actual
+
+               +ve    -ve
+             
+           +ve  TP     FP
+prediction  
+           -ve  FN     TN
+
+
+
+
+Accuracy:
+Accuracy=(TP+TN)/(TP+TN+FP+FN)
+
+Recall:
+Recall=TP/(TP+FN)
+Ex:Covid
+
+Precision:
+Precision=TP/(TP+FP)
+Ex:Spam detection
+
+F1 score:
+F1 score=2 PR/(P+R)
+Ex:Loan
+
+Calculating class wise metrics like 0-TP 1-R 2-P 3-(sum of others).
+
+Class-wise Metrics:
+
+macro-average:
+we consider this case if all are equal in no..
+macro=avg(individual (F1 score))
+
+weighted-average:
+we consider this case if there are different weights for different values equal.
+weighted=sum((individual (F1 score))* weight of each item(means TP/total TP))
+
+micro-average:
+if all are having the equal priority.
+Recall=TP/(TP+FN)
+Precision=TP/(TP+FP)
+F1 score=2 PR/(P+R)
+Accuracy=(TP+TN)/(TP+TN+FP+FN).
+
+Prediction of new i/p's:
+We need to have the violaton chart and a subset also for all the violations.
+The data need to be of every aspect as accurate as possible.
+
+Curse of dimentionality:
+The increase in dimention will decrease the use of k-nn like we need to consider entire space for distance.
+
+Manhatts distance:
+(a1,a2) and (b1,b2) are points |a1-b1|+|a2-b2|
+
+
+
+
+
+
+
+
+
+

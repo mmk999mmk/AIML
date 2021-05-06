@@ -1,0 +1,97 @@
+array broadcasting:
+--------------------
+3 4 1 2
+  1 4 2 -- org array
+
+3 4 1 2
+1 1 4 2 -- broad array
+
+3 4 4 2 -- o/p array
+---------------------
+array manipulations:
+---------------------
+np.reshape(array,new_shape) -- it will return a view or a copy not sure based on the processer and all things.
+
+i/p:
+
+a=np.array([1,2,3,4,4,5,6,7,8,9])
+c=a.reshape((5,2))
+c[0]=22
+print(c)
+print(a)
+
+b=np.reshape(a,(5,2))
+b[0]=22
+print(b)
+print(a)
+
+o/p:
+
+[[22 22]
+ [ 3  4]
+ [ 4  5]
+ [ 6  7]
+ [ 8  9]]
+[22 22  3  4  4  5  6  7  8  9]
+[[22 22]
+ [ 3  4]
+ [ 4  5]
+ [ 6  7]
+ [ 8  9]]
+[22 22  3  4  4  5  6  7  8  9]
+
+2.
+np.reshape(a,(-1,5))  -- -1 will be acts as a place holder
+
+array([[22, 22,  3,  4,  4],
+       [ 5,  6,  7,  8,  9]])
+
+3. in reshaping the array will be transformed to 1-d array and then reshapes it.
+
+4.np.ravel(a)  --- a larger dimensions to a 1-d array and it gives the view of an org array.
+
+5.a.faltten()  --- a larger dimensions to a 1-d array and it gives the copy of an org array.
+
+6.nd array to (n+1)d array we will use row_vector = a[np.newaxis, :],column_vector = a[:, np.newaxis]
+
+7.np.squeeze(a,axis=0) -- will be used to squeeze the array of 1d array
+
+Returns the view of an array with the axes moved from their original positions to the new positions.
+Other axes remain in their original order.
+
+8.np.moveaxis(a,org,to_be_changed)
+
+Returns an array with axis1 and axis2 interchanged.
+Other axes remain in their original order.
+
+9.np.swapaxes(a,org,to_be_changed)
+
+10.np.split(arr, indices_or_sections, axis=0/1)
+
+11.np.hsplit(arr, indices_or_sections) -- axis=1
+
+12.np.vsplit(arr, indices_or_sections) -- axis=0
+
+13.np.concatenate((a, b), axis=0)
+
+a = np.array([[7, 4, 5], 
+              [1, 3, 2]])
+
+b = np.array([[-1, -2,-3]])
+
+array([[ 7,  4,  5],
+       [ 1,  3,  2],
+       [-1, -2, -3]])
+
+13.np.vstack((a, b))  -- axis=0
+
+14.np.hstack((a, b))  -- axis=1
+
+
+1010101 4
+0101010 3
+1010101 4
+0101010 3
+1010101 4
+0101010 3
+1010101 4

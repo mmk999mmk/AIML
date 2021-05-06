@@ -1,0 +1,25 @@
+np.sum() -- will do along the axis
+np.add.reduce()
+
+np.max()
+
+np.sort(a) -- will not change org array
+a.sort() -- will change the org array
+
+np.argsort(a) --  will give the indexes
+
+broadcasting:
+-------------
+need to be of same shape
+value in either of the array need to be of 1.
+(3,1,2,4)
+(1,2,2,3) -- not possible
+
+(3,1,2,4)
+(1,2,2,1) -- possible
+
+b & masking:
+------------
+a=[1 2 3 4]
+mask=a>3
+a[mask]=[f f f t]
